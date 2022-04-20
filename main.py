@@ -98,7 +98,7 @@ def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jd
             tokenize = False
             if user_info['tokenize']!=0:
                tokenize = True
-            bot.editMessageText(message,'🤜Subiendo ☁ Espere Mientras... 😄')
+            bot.editMessageText(message,'Subiendo al Nexus✨')
             host = user_info['moodle_host']
             user = user_info['moodle_user']
             passw = user_info['moodle_password']
@@ -206,7 +206,7 @@ def onmessage(update,bot:ObigramClient):
         tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        tl_admin_user = 'obisoftdev'
+        tl_admin_user = 'alejandr0123'
 
         jdb = JsonDatabase('database')
         jdb.check_create()
@@ -237,7 +237,7 @@ def onmessage(update,bot:ObigramClient):
                     user = str(msgText).split(' ')[1]
                     jdb.create_user(user)
                     jdb.save()
-                    msg = '😃Genial @'+user+' ahora tiene acceso al bot👍'
+                    msg = 'Genial @'+user+' ahora tiene acceso al bot'
                     bot.sendMessage(update.message.chat.id,msg)
                 except:
                     bot.sendMessage(update.message.chat.id,'❌Error en el comando /adduser username❌')
@@ -389,10 +389,9 @@ def onmessage(update,bot:ObigramClient):
         thread.store('msg',message)
 
         if '/start' in msgText:
-            start_msg = 'Bot          : TGUploaderPro v7.0\n'
-            start_msg+= 'Desarrollador: @obisoftdev\n'
-            start_msg+= 'Api          : https://github.com/Obysoftt/pyobigram\n'
-            start_msg+= 'Uso          :Envia Enlaces De Descarga y Archivos Para Procesar (Configure Antes De Empezar , Vea El /tutorial)\n'
+            start_msg = 'Bot          : NexusDev - UploadDerGit'
+            start_msg+= 'Propietario  : @alejandr0123\n'
+            start_msg+= 'Uso          :Envia Enlaces De Descarga y Archivos Para Cargar al Nexus, Moodle o NextCloud (Configure Antes De Empezar , Vea El /tutorial)\n'
             bot.editMessageText(message,start_msg)
         elif '/files' == msgText and user_info['cloudtype']=='moodle':
              proxy = ProxyCloud.parse(user_info['proxy'])
@@ -455,7 +454,7 @@ def onmessage(update,bot:ObigramClient):
                 # set in debug
             #    api_id = 7386053
             #    api_hash = '78d1c032f3aa546ff5176d9ff0e7f341'
-            #    bot_token = '5124841893:AAH30p6ljtIzi2oPlaZwBmCfWQ1KelC6KUg'
+            #    bot_token = '5368357604:AAGBl9Zqgyww_gsoT3osLnY9JkN-299WM2s'
 
             #    chat_id = int(update.message.chat.id)
             #    message_id = int(update.message.message_id)
